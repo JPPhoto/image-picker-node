@@ -27,7 +27,7 @@ class ImagePickerOutput(BaseInvocationOutput):
     image: ImageField = OutputField(description="The image being chosen")
 
 
-@invocation("image_picker", title="ImagePicker", tags=["random", "image_picker"])
+@invocation("image_picker", title="ImagePicker", tags=["random", "image_picker"], version="1.0.0")
 class ImagePickerInvocation(BaseInvocation):
     """Picks one image at random from a list of images"""
 

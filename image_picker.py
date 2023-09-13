@@ -1,23 +1,20 @@
 # Copyright (c) 2023 Jonathan S. Pollack (https://github.com/JPPhoto)
 
-from pydantic import BaseModel
+import random
 
-from invokeai.app.invocations.primitives import (
-    ImageField,
-)
+from pydantic import BaseModel
 
 from invokeai.app.invocations.baseinvocation import (
     BaseInvocation,
     BaseInvocationOutput,
     InputField,
     InvocationContext,
-    invocation,
-    invocation_output,
     OutputField,
     UIType,
+    invocation,
+    invocation_output,
 )
-
-import random
+from invokeai.app.invocations.primitives import ImageField
 
 
 @invocation_output("image_picker_output")

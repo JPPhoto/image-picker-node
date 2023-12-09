@@ -2,15 +2,12 @@
 
 import random
 
-from pydantic import BaseModel
-
 from invokeai.app.invocations.baseinvocation import (
     BaseInvocation,
     BaseInvocationOutput,
     InputField,
     InvocationContext,
     OutputField,
-    UIType,
     invocation,
     invocation_output,
 )
@@ -29,7 +26,7 @@ class ImagePickerInvocation(BaseInvocation):
     """Picks one image at random from a list of images"""
 
     collection: list[ImageField] = InputField(
-        description="The list of images to select from", ui_type=UIType.ImageCollection, default_factory=list
+        description="The list of images to select from"
     )
 
     def invoke(self, context: InvocationContext) -> ImagePickerOutput:

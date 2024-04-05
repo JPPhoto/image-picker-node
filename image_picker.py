@@ -2,15 +2,16 @@
 
 import random
 
-from invokeai.app.invocations.baseinvocation import (
+from invokeai.invocation_api import (
     BaseInvocation,
     BaseInvocationOutput,
+    ImageField,
+    InputField,
     InvocationContext,
+    OutputField,
     invocation,
     invocation_output,
 )
-from invokeai.app.invocations.fields import InputField, OutputField
-from invokeai.app.invocations.primitives import ImageField
 
 
 @invocation_output("image_picker_output")
@@ -20,7 +21,7 @@ class ImagePickerOutput(BaseInvocationOutput):
     image: ImageField = OutputField(description="The image being chosen")
 
 
-@invocation("image_picker", title="ImagePicker", tags=["random", "image_picker"], version="1.0.1", use_cache=False)
+@invocation("image_picker", title="ImagePicker", tags=["random", "image_picker"], version="1.0.2", use_cache=False)
 class ImagePickerInvocation(BaseInvocation):
     """Picks one image at random from a list of images"""
 
